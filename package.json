@@ -1,0 +1,15 @@
+{
+  "name": "otp-wa-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp bot yang ambil OTP dari Gmail",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "googleapis": "^105.0.0",
+    "moment-timezone": "^0.6.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.28.0"
+  }
+}
