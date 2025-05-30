@@ -1,13 +1,16 @@
 const fs = require("fs");
 const readline = require("readline");
 const { google } = require("googleapis");
+require("dotenv").config();
 
 const SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"];
 const TOKEN_PATH = "token.json";
 
 function authorize(callback) {
-  const credentials = require("./credentials.json");
-  const { client_secret, client_id, redirect_uris } = credentials.installed;
+  const client_id = process.env.CLIENT_ID;
+  const client_secret = process.env.CLIENT_SECRET;
+  const redirect_uris = [process.env.REDIRECT_URI];
+
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
