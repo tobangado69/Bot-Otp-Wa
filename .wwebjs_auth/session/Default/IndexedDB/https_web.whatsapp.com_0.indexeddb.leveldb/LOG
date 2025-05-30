@@ -1,40 +1,4 @@
-2025/05/30-21:19:12.229 4cb4 Reusing MANIFEST C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/05/30-21:19:12.229 4cb4 Recovering log #1185
-2025/05/30-21:19:12.256 4cb4 Reusing old log C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001185.log 
-2025/05/30-21:19:13.724 1db4 Level-0 table #1202: started
-2025/05/30-21:19:13.732 1db4 Level-0 table #1202: 271180 bytes OK
-2025/05/30-21:19:13.734 1db4 Delete type=0 #1185
-2025/05/30-21:19:13.734 1db4 Manual compaction at level-0 from '\x00\\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00]\x00\x00\x00' @ 0 : 0; will stop at '\x00\\x00\x00\x05' @ 2273870 : 1
-2025/05/30-21:19:13.734 1db4 Compacting 1@0 + 1@1 files
-2025/05/30-21:19:13.746 1db4 Generated table #1203@0: 5328 keys, 118769 bytes
-2025/05/30-21:19:13.749 1db4 Generated table #1204@0: 322 keys, 5560 bytes
-2025/05/30-21:19:13.749 1db4 Compacted 1@0 + 1@1 files => 124329 bytes
-2025/05/30-21:19:13.751 1db4 compacted to: files[ 0 2 13 0 0 0 0 ]
-2025/05/30-21:19:13.751 1db4 Delete type=2 #1202
-2025/05/30-21:19:13.751 1db4 Manual compaction at level-0 from '\x00\\x00\x00\x05' @ 2273870 : 1 .. '\x00]\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/05/30-21:19:14.903 1db4 Compacting 1@1 + 10@2 files
-2025/05/30-21:19:14.971 1db4 Generated table #1205@1: 82513 keys, 2243683 bytes
-2025/05/30-21:19:15.020 1db4 Generated table #1206@1: 38407 keys, 2203369 bytes
-2025/05/30-21:19:15.041 1db4 Generated table #1207@1: 2148 keys, 2154138 bytes
-2025/05/30-21:19:15.066 1db4 Generated table #1208@1: 3776 keys, 2159110 bytes
-2025/05/30-21:19:15.085 1db4 Generated table #1209@1: 2866 keys, 2150958 bytes
-2025/05/30-21:19:15.121 1db4 Generated table #1210@1: 16630 keys, 2187180 bytes
-2025/05/30-21:19:15.176 1db4 Generated table #1211@1: 29045 keys, 2259886 bytes
-2025/05/30-21:19:15.215 1db4 Generated table #1212@1: 22901 keys, 2183319 bytes
-2025/05/30-21:19:15.264 1db4 Generated table #1213@1: 53162 keys, 2188452 bytes
-2025/05/30-21:19:15.343 1db4 Generated table #1214@1: 99953 keys, 2249077 bytes
-2025/05/30-21:19:15.347 1db4 Generated table #1215@1: 1605 keys, 37095 bytes
-2025/05/30-21:19:15.347 1db4 Compacted 1@1 + 10@2 files => 22016267 bytes
-2025/05/30-21:19:15.349 1db4 compacted to: files[ 0 1 14 0 0 0 0 ]
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1188
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1189
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1190
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1191
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1192
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1193
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1194
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1195
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1196
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1197
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1198
-2025/05/30-21:19:15.349 1db4 Delete type=2 #1203
+2025/05/30-21:44:20.743 11b4 Reusing MANIFEST C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/30-21:44:20.743 11b4 Recovering log #1253
+2025/05/30-21:44:20.743 11b4 Reusing old log C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001253.log 
+2025/05/30-21:44:20.743 11b4 Delete type=2 #1252
