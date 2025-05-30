@@ -13,7 +13,7 @@ client.on("qr", (qr) => {
 });
 
 client.on("ready", () => {
-  console.log("Bot WhatsApp siap!");
+  console.log("Bot WhatsApp udah nyala nih bosku!");
 });
 
 client.on("message", async (message) => {

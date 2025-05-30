@@ -1,18 +1,6 @@
-2025/05/30-21:44:17.552 7fd4 Reusing MANIFEST C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/05/30-21:44:17.552 7fd4 Recovering log #1234
-2025/05/30-21:44:17.689 7fd4 Level-0 table #1252: started
-2025/05/30-21:44:17.710 7fd4 Level-0 table #1252: 1247704 bytes OK
-2025/05/30-21:44:17.711 7fd4 Recovering log #1252
-2025/05/30-21:44:17.711 7fd4 Reusing old log C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001252.log 
-2025/05/30-21:44:17.713 7fd4 Delete type=0 #1234
-2025/05/30-21:44:17.713 7fd4 Delete type=2 #1253
-2025/05/30-21:44:17.718 5054 Level-0 table #1254: started
-2025/05/30-21:44:17.718 5054 Level-0 table #1254: 0 bytes OK
-2025/05/30-21:44:17.720 5054 Delete type=0 #1252
-2025/05/30-21:44:17.720 5054 Manual compaction at level-0 from '\x00`\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00a\x00\x00\x00' @ 0 : 0; will stop at '\x00`\x00\x00\x05' @ 2370426 : 1
-2025/05/30-21:44:17.720 5054 Compacting 1@0 + 0@1 files
-2025/05/30-21:44:17.751 5054 Generated table #1255@0: 19373 keys, 387506 bytes
-2025/05/30-21:44:17.754 5054 Generated table #1256@0: 243 keys, 4441 bytes
-2025/05/30-21:44:17.754 5054 Compacted 1@0 + 0@1 files => 391947 bytes
-2025/05/30-21:44:17.755 5054 compacted to: files[ 0 2 12 0 0 0 0 ]
-2025/05/30-21:44:17.756 5054 Manual compaction at level-0 from '\x00`\x00\x00\x05' @ 2370426 : 1 .. '\x00a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/05/30-22:42:44.872 6f68 Creating DB C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2025/05/30-22:42:44.888 6f68 Reusing MANIFEST C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/30-22:42:44.888 6f68 Recovering log #1409
+2025/05/30-22:42:45.176 6f68 Level-0 table #3: started
+2025/05/30-22:42:45.202 6f68 Level-0 table #3: 1050834 bytes OK
+2025/05/30-22:42:45.204 6f68 Delete type=0 #1409

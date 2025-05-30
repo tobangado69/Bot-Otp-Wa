@@ -1,3 +1,4 @@
-2025/05/30-21:44:20.781 11b4 Reusing MANIFEST C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
-2025/05/30-21:44:20.781 11b4 Recovering log #3
-2025/05/30-21:44:20.782 11b4 Reusing old log C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\Session Storage/000003.log 
+2025/05/30-22:42:49.651 36d4 Creating DB C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\Session Storage since it was missing.
+2025/05/30-22:42:49.660 36d4 Reusing MANIFEST C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
+2025/05/30-22:42:49.660 36d4 Recovering log #3
+2025/05/30-22:42:49.660 36d4 Reusing old log C:\Users\Administrator\Bot-Otp-Wa\.wwebjs_auth\session\Default\Session Storage/000003.log 
