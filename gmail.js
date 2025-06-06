@@ -81,64 +81,66 @@ function extractBody(payload) {
   return null;
 }
 
-async function getLatestOtp() {
+async function getLatestOtp(username) {
   return new Promise((resolve) => {
     authorize(async (auth) => {
       const gmail = google.gmail({ version: "v1", auth });
 
-      // OTP terbaru dari 10 menit terakhir
-      const tenMinutesAgoInSeconds = Math.floor(
-        (Date.now() - 10 * 60 * 1000) / 1000
-      );
+      const now = Date.now();
+      const tenMinutesAgoInSeconds = Math.floor((now - 10 * 60 * 1000) / 1000);
 
-      const res = await gmail.users.messages.list({
-        userId: "me",
-        maxResults: 10,
-        q: `from:noreply@steampowered.com subject:"Your Steam account: Access from new computer" after:${tenMinutesAgoInSeconds}`,
-      });
+      // Query untuk mencari email OTP dari Steam, EA, dan Epic Games
+      const queries = [
+        `from:noreply@steampowered.com subject:"Your Steam account: Access from new computer" after:${tenMinutesAgoInSeconds}`,
+        `from:ea@e.ea.com subject:"Your EA Security Code" after:${tenMinutesAgoInSeconds}`,
+        `from:noreply@epicgames.com subject:"Your Security Code" after:${tenMinutesAgoInSeconds}`,
+      ];
 
-      const messages = res.data.messages;
-      if (!messages || messages.length === 0) {
-        console.error("❌ Tidak ada email ditemukan.");
-        return resolve(null);
+      for (const query of queries) {
+        const res = await gmail.users.messages.list({
+          userId: "me",
+          maxResults: 5,
+          q: query,
+        });
+
+        const messages = res.data.messages;
+        if (!messages) continue;
+
+        for (const msgMeta of messages) {
+          const msg = await gmail.users.messages.get({
+            userId: "me",
+            id: msgMeta.id,
+          });
+
+          const payload = msg.data.payload;
+          const internalDate = Number(msg.data.internalDate);
+          let bodyData = extractBody(payload) || payload.body?.data;
+          if (!bodyData) continue;
+
+          const html = Buffer.from(bodyData, "base64").toString("utf-8");
+
+          // Optional: cek region Indonesia
+          if (!html.toLowerCase().includes("indonesia")) continue;
+
+          // Cek username (Steam)
+          if (username && !html.toLowerCase().includes(username.toLowerCase())) continue;
+
+          // Regex EA/Epic (6 angka) atau Steam (5 huruf/angka)
+          const matchNumeric = html.match(/\b\d{6}\b/); // EA/Epic
+          const matchSteam = html.match(/\b[A-Z0-9]{5}\b/); // Steam
+
+          const otp = matchNumeric ? matchNumeric[0] : matchSteam ? matchSteam[0] : null;
+          if (!otp) continue;
+
+          return resolve({ otp, timestamp: internalDate });
+        }
       }
 
-      const msg = await gmail.users.messages.get({
-        userId: "me",
-        id: messages[0].id,
-      });
-
-      const payload = msg.data.payload;
-      const internalDate = Number(msg.data.internalDate);
-      let bodyData = extractBody(payload) || payload.body?.data;
-
-      if (!bodyData) {
-        console.error("❌ Tidak ada data body ditemukan dalam email.");
-        return resolve(null);
-      }
-
-      const html = Buffer.from(bodyData, "base64").toString("utf-8");
-
-      // Filter berdasarkan region Indonesia
-      if (!html.toLowerCase().includes("indonesia")) {
-        console.log("⚠️ Email bukan dari region Indonesia, abaikan.");
-        return resolve(null);
-      }
-
-      // Cari OTP dengan regex yang lebih akurat
-      const match = html.match(/(?:code|OTP|Guard)[^A-Z0-9]*([A-Z0-9]{5})/i);
-      const otp = match ? match[1] : null;
-
-      if (otp) {
-        console.log("✅ OTP ditemukan:", otp, "Timestamp:", internalDate);
-        resolve({ otp, timestamp: internalDate });
-      } else {
-        console.log("⚠️ Tidak ditemukan OTP dalam email.");
-        console.log(html); // Debug opsional
-        resolve(null);
-      }
+      console.log("❌ Tidak ditemukan OTP di semua query.");
+      resolve(null);
     });
   });
 }
+
 
 module.exports = { getLatestOtp };

@@ -21,8 +21,7 @@ client.on("message", async (message) => {
   if (body.toLowerCase().startsWith("!otp ")) {
     const username = body.slice(5).trim();
 
-    const otpData = await getLatestOtp();
-
+    const otpData = await getLatestOtp(username);
     if (!otpData) {
       message.reply(
         `❌ Belum ada OTP untuk username: *${username}*\n\nSilahkan dicoba kembali dalam 2 menit 🙏`
@@ -31,6 +30,7 @@ client.on("message", async (message) => {
       const { otp, timestamp } = otpData;
       const now = moment(timestamp)
         .tz("Asia/Jakarta")
+
         .format("YYYY-MM-DD HH:mm:ss");
 
       message.reply(
